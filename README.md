@@ -1,5 +1,4 @@
 # インストール
-
 ``
 brew pipenv`
 pipenv install
@@ -7,12 +6,13 @@ pipenv install --dev
 ```
 
 # 実行
-
+メインロジック
 ```
-# メインロジック
 pipenv run start
+```
 
-# テスト
+テスト
+```
 pipenv run test
 ```
 
