@@ -14,4 +14,4 @@ python_version = "3.8"
 
 [scripts]
 start = 'python main.py'
-test = 'pytest -s'
+test = 'pytest -sv'
