@@ -1,4 +1,5 @@
-"""テストサンプル
+"""pytestを利用したテストサンプル
+pytestはunittestで記載された内容も実行は可能
 """
 import pytest
 
