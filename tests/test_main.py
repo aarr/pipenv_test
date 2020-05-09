@@ -2,6 +2,8 @@
 pytestはunittestで記載された内容も実行は可能
 """
 import pytest
+import sys
+import src.pipenv_test.main as target
 
 def teardown1():
     print('teardown1 complete')
@@ -17,6 +19,7 @@ def teardown1():
 def con(request, connection):
     # 前処理    
     print('')
+    print('PATH:{0}'.format(str(sys.path)))
     print('before yeild process complete')
     # 後処理２登録
     # finalizerは複数登録できる
@@ -42,6 +45,7 @@ def con(request, connection):
 # テストケース毎にtempディレクトリの初期化を行うなどが可能
 # テストメソッド毎の設定も可能
 # テスト全体で利用するのであれば、iniファイルに記載も可能
+# クラス名はTest始まりでないといけない
 @pytest.mark.usefixtures('cleandir')
 class TestFixuture():
 
@@ -65,3 +69,6 @@ class TestFixuture():
 @pytest.mark.usefixtures('cleandir')
 def test_1(con):
     assert 1 == 1
+
+def test_ip(con):
+    assert '1.1.1.1' == target.get_ip()

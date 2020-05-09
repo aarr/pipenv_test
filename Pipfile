@@ -5,6 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 pytest = "*"
+pytest-cov = "*"
 
 [packages]
 requests = "*"
@@ -13,5 +14,7 @@ requests = "*"
 python_version = "3.8"
 
 [scripts]
-start = 'python main.py'
+start = 'python ./src/pipenv_test'
 test = 'pytest -sv'
+test-cov = 'pytest --cov=pipenv_test --cov-report=html'
+test-junit = 'pytest --junitxml=junit.xml'

@@ -8,9 +8,15 @@ pipenv install --dev
 # 実行
 ```
 # メインロジック
-pipenv run start
+$ pipenv run start
 
 # テスト
-pipenv run test
+$ pipenv run test
+
+# テスト（カバレッジ）
+$ pipenv run test-cov
+
+# テスト（jUnit形式）
+$ pipenv run test-junit
 ```
 
